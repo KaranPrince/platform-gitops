@@ -1,0 +1,3 @@
+resources:
+  - projects/moderor-project.yaml
+  - applications/moderor-enterprise-platform.yaml
