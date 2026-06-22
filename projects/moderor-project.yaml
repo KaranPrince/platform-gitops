@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: moderor
+  namespace: argocd
+  # Finalizer ensures that the project can't be deleted if apps still use it
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: "Project for Moderor Enterprise Platform"
+  # Allows the project to deploy to the local cluster
+  destinations:
+    - namespace: '*'
+      server: https://kubernetes.default.svc
+  # Allows this project to pull from any source repository 
+  # (You can restrict this to your specific GitHub URL later for tighter security)
+  sourceRepos:
+    - '*'
+  # Allows the project to deploy all kinds of Kubernetes resources
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'

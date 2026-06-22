@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: backend-team
+  namespace: argocd
+spec:
+  description: Backend Team
+  sourceRepos:
+    - https://github.com/KaranPrince/platform-gitops.git
+  destinations:
+    - namespace: moderor-api
+      server: https://kubernetes.default.svc
+    - namespace: moderor-auth
+      server: https://kubernetes.default.svc

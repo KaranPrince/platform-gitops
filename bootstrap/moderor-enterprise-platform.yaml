@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: moderor-enterprise-platform
+  namespace: argocd
+spec:
+  project: moderor
+  source:
+    repoURL: https://github.com/KaranPrince/platform-gitops.git
+    targetRevision: main
+    path: applications
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

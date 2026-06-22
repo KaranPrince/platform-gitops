@@ -1,23 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-
 metadata:
-  name: root-app
+  name: moderor-notification
   namespace: argocd
-
 spec:
-  project: default
-
+  project: moderor
   source:
     repoURL: https://github.com/KaranPrince/platform-gitops.git
     targetRevision: main
-    path: applications
-
+    path: applications/moderor-notification/base
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
-
+    namespace: moderor-notification
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

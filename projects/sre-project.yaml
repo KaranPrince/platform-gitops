@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: sre-team
+  namespace: argocd
+spec:
+  description: SRE Team
+  sourceRepos:
+    - https://github.com/KaranPrince/platform-gitops.git
+  destinations:
+    - namespace: monitoring
+      server: https://kubernetes.default.svc

@@ -1,2 +1,5 @@
 resources:
-  - nginx/app.yaml
+  - moderor-ui/app.yaml
+  - moderor-api/app.yaml
+  - moderor-auth/app.yaml
+  - moderor-notification/app.yaml
