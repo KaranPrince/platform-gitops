@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: moderor-auth
+  name: moderor-notification
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: moderor-auth
+      app: moderor-notification
   template:
     metadata:
       labels:
-        app: moderor-auth
+        app: moderor-notification
     spec:
       containers:
-      - name: auth
+      - name: notification
         image: hashicorp/http-echo:1.0
         args:
-          - "-text=Moderor Authentication Service"
+          - "-text=Moderor Notification Service"
         ports:
-        - containerPort: 2000
+        - containerPort: 3000

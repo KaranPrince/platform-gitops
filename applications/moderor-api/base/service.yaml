@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: moderor-api
+spec:
+  selector:
+    app: moderor-api
+  ports:
+  - port: 1001
+    targetPort: 1001

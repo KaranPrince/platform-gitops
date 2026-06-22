@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: moderor-ui
+spec:
+  selector:
+    app: moderor-ui
+  ports:
+  - port: 4001
+    targetPort: 4001

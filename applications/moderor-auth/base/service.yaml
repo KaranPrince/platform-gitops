@@ -6,5 +6,5 @@ spec:
   selector:
     app: moderor-auth
   ports:
-  - port: 80
-    targetPort: 5678
+  - port: 2001
+    targetPort: 2001

@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: moderor-auth
+  name: moderor-api
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: moderor-auth
+      app: moderor-api
   template:
     metadata:
       labels:
-        app: moderor-auth
+        app: moderor-api
     spec:
       containers:
-      - name: auth
+      - name: api
         image: hashicorp/http-echo:1.0
         args:
-          - "-text=Moderor Authentication Service"
+          - "-text=Moderor API Service"
         ports:
-        - containerPort: 2000
+        - containerPort: 1000
